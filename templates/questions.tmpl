@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Questions</title>
+    <style type="text/css">
+    body {
+      font: 16px/1.5 avenir next, helvetica, arial, sans-serif;
+    }
+    </style>
+  </head>
+
+  <body style="margin: 20px;">
+    <h1>Questions</h1>
+    {{range .}}
+      <div> {{.Text}} - {{.Score}}</div>
+    {{ end }}
+
+    <h1>Add a question</h1>
+    <form action="/questions" method="POST" class="pure-form">
+      <input type="text" name="text" placeholder="text" style="width:400px;" />
+      <input type="text" name="score" placeholder="score" style="width:100px;" />
+      <input type="submit" value="添加问题" class="pure-button pure-button-primary"/>
+    </form>
+  </body>
+</html>
